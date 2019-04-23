@@ -177,3 +177,11 @@ h3 {
 	margin-left: 35%;
 	margin-bottom: 15px;
 }
+
+#errorMessage {
+	color: red;
+	display: none;
+	width: max-content;
+	margin: auto;
+	padding-bottom: 10px;
+}
