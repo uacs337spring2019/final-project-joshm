@@ -3,6 +3,6 @@
   "name": "Node.js Sample",
   "description": "Final project",
   "repository": "https://github.com/uacs337spring2019/final-project-joshm/upload",
-  "logo": "package3.png",
+  "logo": "package3.jpg",
   "keywords": [ "node", "express", "static" ]
 }
