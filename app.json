@@ -1,0 +1,8 @@
+{
+  
+  "name": "Node.js Sample",
+  "description": "Final project",
+  "repository": "https://github.com/uacs337spring2019/final-project-joshm/upload",
+  "logo": "https://rawgit.com/heroku/node-js-sample/master/public/node.svg",
+  "keywords": [ "node", "express", "static" ]
+}
