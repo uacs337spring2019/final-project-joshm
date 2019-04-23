@@ -23,7 +23,7 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 
 	function getTeacherList() {
 		//var url = "http://localhost:3000?mode=teacherList";
-		var url = "http://jmrateeceprofessors2.herokuapp.com?mode=teacherList";
+		var url = "http://jmrateeceprofessors3.herokuapp.com?mode=teacherList";
 			fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
@@ -80,7 +80,7 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 			let last = names[1];
 
 			//var url = "http://localhost:3000?mode=teacher&first=" + first + "&last=" + last;
-			var url = "http://jmrateeceprofessors2.herokuapp.com?mode=teacher&first=" + first + "&last=" + last;
+			var url = "http://jmrateeceprofessors3.herokuapp.com?mode=teacher&first=" + first + "&last=" + last;
 			fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
@@ -269,7 +269,7 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 			body : JSON.stringify(message)};
 
 		//let url = "http://localhost:3000";
-		var url = "http://jmrateeceprofessors2.herokuapp.com";
+		var url = "http://jmrateeceprofessors3.herokuapp.com";
 
 		//post made with object containing user inputs
 		fetch(url, fetchOptions)
