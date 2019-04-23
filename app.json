@@ -2,7 +2,7 @@
   
   "name": "Node.js Sample",
   "description": "Final project",
-  "repository": "https://github.com/uacs337spring2019/final-project-joshm/upload",
+  "repository": "https://github.com/uacs337spring2019/final-project-joshm",
   "logo": "texture3.jpg",
   "keywords": [ "node", "express", "static" ]
 }
