@@ -251,37 +251,67 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 	function submitRating() {
 		let message = {};
 		//message for posting will simply be an object taking its inputs from review form inputs
-		message["name"] = document.getElementById("name").innerHTML;
+		message["name"] = document.getElementById("selectTeacher").value;
+
+		//message for post created while at same time while values stored
+		//to make sure all inputs match regular expressions
 		message["date"] = document.getElementById("date").value;
+		let str = message["date"] + "";
+		let date = str.match(/^([0-9]{2}\/[0-9]{2}\/[0-9]{4})$/g);
 		message["quality"] = document.getElementById("quality").value;
+		str = message["quality"] + "";
+		let quality = str.match(/^[0-5]\.[0-9]$/g);
 		message["difficulty"] = document.getElementById("difficulty").value;
+		str = message["difficulty"] + "";
+		let difficulty = str.match(/^[0-5]\.[0-9]$/g);
 		message["class"] = document.getElementById("class").value;
+		str = message["class"] + "";
+		let classN = str.match(/^[A-Z]{3,4}[0-9]{3}$/g);
 		message["textbook"] = document.getElementById("textbook").value;
+		str = message["textbook"] + "";
+		let textbook = str.match(/^(Yes)$|^(No)$/g);
 		message["takeAgain"] = document.getElementById("takeAgain").value;
+		str = message["takeAgain"] + "";
+		let takeAgain = str.match(/^(Yes)$|^(No)$|^(N\/A)$/g);
 		message["gradeReceived"] = document.getElementById("gradeReceived").value;
+		str = message["gradeReceived"] + "";
+		let gradeReceived = str.match(/^[A-E][\+\-]?$/g);
+		
 		message["comment"] = document.getElementById("comment").value;
 
-		const fetchOptions = {
-			method : 'POST',
-			headers : {
-				'Accept': 'application/json',
-				'Content-Type' : 'application/json'},
-			body : JSON.stringify(message)};
+		//as long as no value received null, the inputs were all valid
+		if ((date!=null) && (quality!=null) && (difficulty!=null) &&
+		 (classN!=null) && (textbook!=null) && (takeAgain!=null) &&
+		  (gradeReceived!=null)) {
+			//hide error message after successful submission
+			document.getElementById("errorMessage").style.display = "none";
 
-		//let url = "http://localhost:3000";
-		var url = "http://jmrateeceprofessors5.herokuapp.com";
+			const fetchOptions = {
+				method : 'POST',
+				headers : {
+					'Accept': 'application/json',
+					'Content-Type' : 'application/json'},
+				body : JSON.stringify(message)};
 
-		//post made with object containing user inputs
-		fetch(url, fetchOptions)
-			.then(checkStatus)
-			.then(function(responseText) {
-				//teacher fetched again and new review viewable
-				fetchTeacher();
-			})
+			//let url = "http://localhost:3000";
+			var url = "http://jmrateeceprofessors5.herokuapp.com";
 
-		.catch(function(error) {
-			alert(error);
-		});
+			//post made with object containing user inputs
+			fetch(url, fetchOptions)
+				.then(checkStatus)
+				.then(function(responseText) {
+					//teacher fetched again and new review viewable
+					fetchTeacher();
+				})
+
+			.catch(function(error) {
+				alert(error);
+			});
+		}
+		//valid input causes error message to display
+		else {
+			document.getElementById("errorMessage").style.display = "block";
+		}
 	}
 
 	function narrowReviews() {
