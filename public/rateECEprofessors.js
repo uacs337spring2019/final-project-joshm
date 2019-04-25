@@ -81,7 +81,7 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 
 			//let url = "http://localhost:3000?mode=teacher&first=" + 
 			//first + "&last=" + last;
-			var url = "http://jmrateprofessors6.herokuapp.com?mode=teacher&first=" first + "&last=" + last;
+			var url = "http://jmrateprofessors6.herokuapp.com?mode=teacher&first=" + first + "&last=" + last;
 			fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
