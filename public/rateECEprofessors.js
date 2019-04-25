@@ -22,8 +22,8 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 	};
 
 	function getTeacherList() {
-		var url = "http://localhost:3000?mode=teacherList";
-		//var url = "http://jmrateeceprofessors.herokuapp.com:process.env.PORT?mode=teacherList";
+		//let url = "http://localhost:3000?mode=teacherList";
+		let url = "http://jmrateprofessors5.herokuapp.com?mode=teacherList";
 			fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
@@ -79,8 +79,10 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 			let first = names[0];
 			let last = names[1];
 
-			var url = "http://localhost:3000?mode=teacher&first=" + first + "&last=" + last;
-			//var url = "http://jmrateeceprofessors.herokuapp.com?mode=teacher&first=" + first + "&last=" + last;
+			//let url = "http://localhost:3000?mode=teacher&first=" + 
+			//first + "&last=" + last;
+			var url = "http://jmrateprofessors5.herokuapp.com?
+			mode=teacher&first=" + first + "&last=" + last;
 			fetch(url)
 			.then(checkStatus)
 			.then(function(responseText) {
@@ -276,7 +278,7 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 		let takeAgain = str.match(/^(Yes)$|^(No)$|^(N\/A)$/g);
 		message["gradeReceived"] = document.getElementById("gradeReceived").value;
 		str = message["gradeReceived"] + "";
-		let gradeReceived = str.match(/^[A-E][\+\-]?$/g);
+		let gradeReceived = str.match(/^[A-E][+-]?$/g);
 		
 		message["comment"] = document.getElementById("comment").value;
 
@@ -294,8 +296,8 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 					'Content-Type' : 'application/json'},
 				body : JSON.stringify(message)};
 
-			let url = "http://localhost:3000";
-			//var url = "http://jmrateeceprofessors.herokuapp.com:process.env.PORT";
+			//let url = "http://localhost:3000";
+			let url = "http://jmrateprofessors5.herokuapp.com";
 
 			//post made with object containing user inputs
 			fetch(url, fetchOptions)
@@ -356,3 +358,4 @@ construction (list of teachers and teacher profiles.  Allows users to make post
 	}
     /////////////////////////////////////////////////////////////////////////////////////
 }) ();
+
