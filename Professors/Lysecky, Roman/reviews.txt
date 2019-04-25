@@ -8,3 +8,4 @@
 02/15/2011::4.0::1.0::ECE577::No::N/A::N/A::Really cool and passionate. 
 12/14/2009::4.5::2.0::ECE274::Yes::N/A::N/A::Overall pretty good prof, can be a bit boring sometimes. Tests are tricky (near impossible to get an A), and you have to religiously study the book. Homeworks are a couple hours worth a week. Labs are ultra-easy to finish early (and not show up the next week). He drops lowest scores on tests+hw, so getting an A is possible but not guaranteed. 
 12/12/2009::5.0::3.0::ECE274::Yes::N/A::N/A::Great professor who is passionate about the material. Lectures very well and is clear about the material. Textbook is well-written also. Exams are frequent (one every three weeks), so be prepared to study consistently. Grading is very fair, although the design problems on the exams are generally rather tricky. Overall, great class. 
+01/01/2000::5.0::1.9::ECE175::No::Yes::A-::undefined
